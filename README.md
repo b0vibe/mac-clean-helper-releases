@@ -1,2 +1,123 @@
-# mac-clean-helper-releases
-Official downloads, documentation, and release notes for Mac Clean Helper / Mac 清洁助手官方下载与版本说明
+# Mac 清洁助手 / Mac Clean Helper
+
+在清洁 MacBook 时临时锁定键盘或触控板，或进入屏幕清洁模式。
+
+Temporarily lock the keyboard or trackpad while cleaning a MacBook, or enter screen cleaning mode.
+
+> **发布状态 / Release status**
+>
+> `v0.1.0` 公开测试版正在准备中。目前还没有可下载的安装包。只有在 Developer ID 签名、Apple 公证和真实下载测试全部通过后，才会在本仓库发布 ZIP。
+>
+> The `v0.1.0` public beta is in preparation. No download is available yet. A ZIP will be published here only after Developer ID signing, Apple notarization, and real-download testing have all passed.
+
+## 中文
+
+### 软件用途
+
+Mac 清洁助手是一款在本机运行的 macOS 工具，提供三种互斥的清洁模式：
+
+- **键盘清洁**：暂时拦截按键，鼠标和触控板仍可使用。
+- **触控板清洁**：暂时拦截点按操作。
+- **屏幕清洁**：在内置显示屏上显示清洁覆盖层。
+
+### 系统要求
+
+- Apple Silicon Mac
+- macOS 13 或更高版本
+- 键盘和触控板清洁需要 macOS“辅助功能”权限
+
+暂不支持 Intel Mac、Mac App Store 安装和自动更新。
+
+### 下载与安装
+
+正式测试包发布后：
+
+1. 从本仓库的 [Releases](https://github.com/b0vibe/mac-clean-helper-releases/releases) 页面下载 `Mac-Clean-Helper-v0.1.0-macOS-arm64.zip`。
+2. 使用同一 Release 中的 `SHA256SUMS.txt` 核对下载文件。
+3. 解压 ZIP，将“Mac 清洁助手”拖入“应用程序”文件夹。
+4. 从“应用程序”正常打开软件。
+5. 按软件引导前往“系统设置 → 隐私与安全性 → 辅助功能”授权。
+
+经过正式签名和公证的版本不要求关闭 Gatekeeper，也不要求使用右键绕过 macOS 安全保护。如果某个下载包要求这样操作，请停止使用并提交反馈。
+
+### 安全退出与自动恢复
+
+| 模式 | 手动退出方式 |
+| --- | --- |
+| 键盘清洁 | 按 ESC 或 Q |
+| 触控板清洁 | 按 ESC 或 Q |
+| 屏幕清洁 | 点按、滚动或按任意键 |
+
+每次清洁最长 5 分钟。退出、超时、睡眠或会话切换时，应用会结束清洁并恢复输入。
+
+### 隐私
+
+应用不记录、不保存、不上传按键或点击内容；当前版本不联网，也不包含广告或统计 SDK。输入事件只在设备内存中即时处理，用于临时拦截输入和识别安全退出操作。
+
+完整说明请阅读 [隐私说明](PRIVACY.md)。
+
+### 反馈
+
+- 一般问题和功能反馈：[GitHub Issues](https://github.com/b0vibe/mac-clean-helper-releases/issues)
+- 涉及敏感信息的安全问题：[安全反馈说明](SECURITY.md)
+- 版本变化：[更新记录](CHANGELOG.md)
+
+请勿在公开 Issue 中发布密码、验证码、恢复代码或个人文件内容。
+
+## English
+
+### About
+
+Mac Clean Helper is a local macOS utility with three mutually exclusive cleaning modes:
+
+- **Keyboard cleaning:** temporarily blocks key input while pointer input remains available.
+- **Trackpad cleaning:** temporarily blocks clicks.
+- **Screen cleaning:** displays a cleaning overlay on the built-in display.
+
+### Requirements
+
+- Apple Silicon Mac
+- macOS 13 or later
+- macOS Accessibility permission for keyboard and trackpad cleaning
+
+Intel Macs, Mac App Store installation, and automatic updates are not currently supported.
+
+### Download and installation
+
+After the public beta package is released:
+
+1. Download `Mac-Clean-Helper-v0.1.0-macOS-arm64.zip` from this repository's [Releases](https://github.com/b0vibe/mac-clean-helper-releases/releases) page.
+2. Verify the download against `SHA256SUMS.txt` from the same Release.
+3. Extract the ZIP and drag Mac Clean Helper to Applications.
+4. Open the app normally from Applications.
+5. Follow the in-app guidance to grant access in System Settings → Privacy & Security → Accessibility.
+
+The officially signed and notarized package will not require disabling Gatekeeper or bypassing macOS security with Open Anyway. Stop using and report any download that asks you to do so.
+
+### Safe exit and automatic recovery
+
+| Mode | Manual exit |
+| --- | --- |
+| Keyboard cleaning | Press Escape or Q |
+| Trackpad cleaning | Press Escape or Q |
+| Screen cleaning | Click, scroll, or press any key |
+
+Each cleaning session is limited to five minutes. The app ends cleaning and restores input on exit, timeout, sleep, or session change.
+
+### Privacy
+
+The app does not record, store, or upload keystrokes or click contents. The current version makes no network connections and contains no advertising or analytics SDKs. Input events are processed immediately and only in device memory to temporarily block input and recognize safe exit actions.
+
+Read the full [Privacy Notice](PRIVACY.md).
+
+### Feedback
+
+- General questions and feature feedback: [GitHub Issues](https://github.com/b0vibe/mac-clean-helper-releases/issues)
+- Security issues involving sensitive information: [Security Policy](SECURITY.md)
+- Version changes: [Changelog](CHANGELOG.md)
+
+Do not post passwords, verification codes, recovery codes, or personal file contents in a public Issue.
+
+## Copyright
+
+Copyright © 2026 b0vibe. The application is free to download for personal evaluation but is not open source. See [Copyright and use terms](LICENSE.md).
