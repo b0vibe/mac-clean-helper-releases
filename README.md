@@ -44,7 +44,7 @@ Mac 清洁助手是一款在本机运行的 macOS 工具，提供三种互斥的
 | --- | --- |
 | 键盘清洁 | 使用鼠标或触控板点击“结束清洁” |
 | 触控板清洁 | 按 ESC 或 Q |
-| 屏幕清洁 | 点按、滚动或按任意键 |
+| 屏幕清洁 | 点按鼠标或按任意键 |
 
 每次清洁禁用最长只会维持 5 分钟，以防由于特殊或意外情况导致无法退出禁用。退出、超时、睡眠或会话切换时，应用会结束清洁并恢复输入。
 
@@ -96,7 +96,7 @@ Download the application package named `Mac-Clean-Helper-v0.1.0-macOS-arm64.zip`
 | --- | --- |
 | Keyboard cleaning | Click “End Cleaning” with the mouse or trackpad |
 | Trackpad cleaning | Press Escape or Q |
-| Screen cleaning | Click, scroll, or press any key |
+| Screen cleaning | Click the mouse or press any key |
 
 Input blocking lasts no longer than five minutes per cleaning session, preventing an unexpected condition from leaving input disabled indefinitely. The app ends cleaning and restores input on exit, timeout, sleep, or session change.
 
