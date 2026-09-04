@@ -1,6 +1,6 @@
 # 更新记录 / Changelog
 
-## [0.1.0] - 2026-09-04
+## [0.1.0] - 2026-09-05
 
 首个 GitHub 公开测试版。
 
@@ -24,6 +24,19 @@ First public GitHub beta.
 - Input blocking lasts no longer than five minutes per cleaning session, preventing an unexpected condition from leaving input disabled indefinitely.
 - Input restoration on exit, timeout, sleep, or session change.
 - Local-only input processing with no recording, storage, or upload of input contents.
+
+### 本次构建更新 / Updated build
+
+- 修复外接显示器上屏幕清洁状态窗口变黑的问题。
+- 屏幕清洁时统一隐藏鼠标指针，并明确键盘和点按退出方式。
+- 清洁过程的最后 60 秒显示逐秒倒计时。
+- 统一键盘、触控板和屏幕清洁动画。
+- 为应用内所有按钮增加统一且更明显的悬停反馈。
+- Fixed the screen-cleaning status window turning black on an external display.
+- The pointer is consistently hidden during screen cleaning, with clear keyboard and click exit guidance.
+- Added a per-second countdown during the final 60 seconds of a cleaning session.
+- Unified keyboard, trackpad, and screen cleaning animations.
+- Added consistent, more visible hover feedback to every in-app button.
 
 ### 系统要求 / Requirements
 
