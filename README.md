@@ -1,131 +1,67 @@
 # Mac 清洁助手 / Mac Clean Helper
 
-在清洁 MacBook 时临时锁定键盘或触控板，或进入屏幕清洁模式。
+**清洁 MacBook 键盘、触控板和屏幕时，临时禁用相应输入，防止擦拭过程中误按按键、误点内容、拖动文件或触发快捷键。**
 
-Temporarily lock the keyboard or trackpad while cleaning a MacBook, or enter screen cleaning mode.
+擦键盘时很容易输入文字或触发快捷键，擦触控板时可能产生点击和拖动。Mac 清洁助手让你先选择要清洁的区域，再临时拦截对应输入，让设备可以安心擦拭。清洁结束后，键盘和触控板会恢复正常使用。
 
-> **发布状态 / Release status**
->
-> `v0.2.1` 正式版本现已发布，可从本仓库的 Releases 页面下载。
->
-> The `v0.2.1` release is now available from this repository's Releases page.
+Mac Clean Helper temporarily blocks keyboard or pointer input while you clean a MacBook, preventing accidental typing, clicks, drags, and keyboard shortcuts.
 
-### v0.2.1 更新
+> **最新版本 / Latest release：[`v0.2.2`](https://github.com/b0vibe/mac-clean-helper-releases/releases/tag/v0.2.2)**
 
-- 修复正式安装包中应用图标边缘明暗不均的问题
-- 移除发布资源中额外烘焙的外圈高光
-- 统一开发构建、正式构建与已安装应用使用的图标位图资源
+## 它能解决什么问题
 
-## 中文
+- **键盘清洁**：临时拦截按键，避免擦拭键帽时输入文字、触发快捷键或操作当前应用；鼠标和触控板仍可用于结束清洁
+- **触控板清洁**：临时拦截触控板和鼠标点按，避免擦拭时误选、误拖动或打开内容；按 `ESC` 或 `Q` 即可结束
+- **屏幕清洁**：在 MacBook 内置显示屏上显示深色清洁画面并隐藏指针，让灰尘、油渍和指纹更容易看清；按任意键或点按即可退出
 
-### 软件用途
+每次清洁最长 5 分钟。手动退出、计时结束、应用退出、电脑睡眠或用户会话切换时，应用都会结束清洁并恢复输入。
 
-Mac 清洁助手是一款在本机运行的 macOS 工具，提供三种互斥的清洁模式：
+## 下载与安装
 
-- **键盘清洁**：暂时拦截按键，鼠标和触控板仍可使用。
-- **触控板清洁**：暂时拦截点按操作。
-- **屏幕清洁**：在内置显示屏上显示清洁覆盖层。
+1. 前往 [Releases](https://github.com/b0vibe/mac-clean-helper-releases/releases) 下载 `Mac-Clean-Helper-v0.2.2-macOS-arm64.zip`
+2. 使用同一 Release 中的 `SHA256SUMS.txt` 核对文件
+3. 解压 ZIP，将“Mac 清洁助手”拖入“应用程序”文件夹
+4. 打开应用，并按引导授予 macOS“辅助功能”权限
 
-### 系统要求
+> GitHub 自动生成的 `Source code (zip)` 和 `Source code (tar.gz)` 只包含本公开仓库的说明文档，不是应用安装包，也不包含应用源代码
+
+## 系统要求
 
 - Apple Silicon Mac
 - macOS 13 或更高版本
 - 键盘和触控板清洁需要 macOS“辅助功能”权限
 
-暂不支持 Intel Mac、Mac App Store 安装和自动更新。
+当前不支持 Intel Mac、Mac App Store 安装和自动更新。
 
-### 下载与安装
+## 为什么需要辅助功能权限
 
-1. 从本仓库的 [Releases](https://github.com/b0vibe/mac-clean-helper-releases/releases) 页面下载 `Mac-Clean-Helper-v0.2.1-macOS-arm64.zip`。
-2. 使用同一 Release 中的 `SHA256SUMS.txt` 核对下载文件。
-3. 解压 ZIP，将“Mac 清洁助手”拖入“应用程序”文件夹。
-4. 从“应用程序”正常打开软件。
-5. 按软件引导前往“系统设置 → 隐私与安全性 → 辅助功能”授权。
+键盘和触控板清洁需要在清洁期间临时拦截输入，因此必须获得 macOS“辅助功能”权限。应用不会记录、保存或上传按键和点击内容。
 
-请下载名称为 `Mac-Clean-Helper-v0.2.1-macOS-arm64.zip` 的应用安装包。Release 页面底部由 GitHub 自动生成的 `Source code (zip)` 和 `Source code (tar.gz)` 只包含本公开仓库的说明文档，不是应用安装包，也不是本应用的源代码。
+## 隐私与安全
 
-### 安全退出与自动恢复
+- 输入事件只在本机内存中即时处理
+- 不记录、不保存、不上传按键或点击内容
+- 当前版本不联网，不包含广告、分析或崩溃上报 SDK
+- 清洁会话最长 5 分钟，并在退出、超时、睡眠和会话切换时自动恢复
 
-| 模式 | 手动退出方式 |
-| --- | --- |
-| 键盘清洁 | 使用鼠标或触控板点击“结束清洁” |
-| 触控板清洁 | 按 ESC 或 Q |
-| 屏幕清洁 | 点按鼠标或按任意键 |
-
-每次清洁禁用最长只会维持 5 分钟，以防由于特殊或意外情况导致无法退出禁用。退出、超时、睡眠或会话切换时，应用会结束清洁并恢复输入。
-
-### 隐私
-
-应用不记录、不保存、不上传按键或点击内容；当前版本不联网，也不包含广告或统计 SDK。输入事件只在设备内存中即时处理，用于临时拦截输入和识别安全退出操作。
-
-完整说明请阅读 [隐私说明](PRIVACY.md)。
-
-### 反馈
-
-- 一般问题和功能反馈：[GitHub Issues](https://github.com/b0vibe/mac-clean-helper-releases/issues)
-- 涉及敏感信息的安全问题：[安全反馈说明](SECURITY.md)
-- 版本变化：[更新记录](CHANGELOG.md)
-
-请勿在公开 Issue 中发布密码、验证码、恢复代码或个人文件内容。
+完整说明：[隐私说明](PRIVACY.md) · [安全反馈](SECURITY.md) · [更新记录](CHANGELOG.md)
 
 ## English
 
-### What’s new in v0.2.1
+Mac Clean Helper is a native macOS utility for safely cleaning a MacBook keyboard, trackpad, and screen. It temporarily blocks the relevant input while you wipe the device, preventing accidental typing, clicks, drags, and keyboard shortcuts.
 
-- Fixed uneven light and dark shading around the public-build application icon
-- Removed the extra baked outer highlight from release resources
-- Unified the bitmap icon source used by development, WebsiteRelease, and the installed app
+### Cleaning modes
 
-### About
+- **Keyboard cleaning:** blocks key input while pointer input remains available; click “End Cleaning” when finished
+- **Trackpad cleaning:** blocks trackpad and mouse clicks while keyboard input remains available; press `Escape` or `Q` to finish
+- **Screen cleaning:** shows a dark cleaning view on the built-in display and hides the pointer so dust and fingerprints are easier to see; press any key or click to exit
 
-Mac Clean Helper is a local macOS utility with three mutually exclusive cleaning modes:
+Every cleaning session is limited to five minutes. Input is restored on manual exit, timeout, app termination, sleep, or user-session change.
 
-- **Keyboard cleaning:** temporarily blocks key input while pointer input remains available.
-- **Trackpad cleaning:** temporarily blocks clicks.
-- **Screen cleaning:** displays a cleaning overlay on the built-in display.
+### Requirements and installation
 
-### Requirements
+Mac Clean Helper requires an Apple Silicon Mac running macOS 13 or later. Download `Mac-Clean-Helper-v0.2.2-macOS-arm64.zip` from [Releases](https://github.com/b0vibe/mac-clean-helper-releases/releases), verify it with `SHA256SUMS.txt`, extract it, and move the app to Applications.
 
-- Apple Silicon Mac
-- macOS 13 or later
-- macOS Accessibility permission for keyboard and trackpad cleaning
-
-Intel Macs, Mac App Store installation, and automatic updates are not currently supported.
-
-### Download and installation
-
-1. Download `Mac-Clean-Helper-v0.2.1-macOS-arm64.zip` from this repository's [Releases](https://github.com/b0vibe/mac-clean-helper-releases/releases) page.
-2. Verify the download against `SHA256SUMS.txt` from the same Release.
-3. Extract the ZIP and drag Mac Clean Helper to Applications.
-4. Open the app normally from Applications.
-5. Follow the in-app guidance to grant access in System Settings → Privacy & Security → Accessibility.
-
-Download the application package named `Mac-Clean-Helper-v0.2.1-macOS-arm64.zip`. The `Source code (zip)` and `Source code (tar.gz)` files automatically generated by GitHub at the bottom of the Release page contain only this public repository's documentation. They are not application packages and do not contain the app's source code.
-
-### Safe exit and automatic recovery
-
-| Mode | Manual exit |
-| --- | --- |
-| Keyboard cleaning | Click “End Cleaning” with the mouse or trackpad |
-| Trackpad cleaning | Press Escape or Q |
-| Screen cleaning | Click the mouse or press any key |
-
-Input blocking lasts no longer than five minutes per cleaning session, preventing an unexpected condition from leaving input disabled indefinitely. The app ends cleaning and restores input on exit, timeout, sleep, or session change.
-
-### Privacy
-
-The app does not record, store, or upload keystrokes or click contents. The current version makes no network connections and contains no advertising or analytics SDKs. Input events are processed immediately and only in device memory to temporarily block input and recognize safe exit actions.
-
-Read the full [Privacy Notice](PRIVACY.md).
-
-### Feedback
-
-- General questions and feature feedback: [GitHub Issues](https://github.com/b0vibe/mac-clean-helper-releases/issues)
-- Security issues involving sensitive information: [Security Policy](SECURITY.md)
-- Version changes: [Changelog](CHANGELOG.md)
-
-Do not post passwords, verification codes, recovery codes, or personal file contents in a public Issue.
-
-## Copyright
+Keyboard and trackpad cleaning require macOS Accessibility permission so the app can temporarily intercept input. The app does not record, store, or upload keystrokes or click contents. It makes no network connections and contains no advertising, analytics, or crash-reporting SDKs.
 
 Copyright © 2026 b0vibe. The application is free to download for personal evaluation but is not open source. See [Copyright and use terms](LICENSE.md).
