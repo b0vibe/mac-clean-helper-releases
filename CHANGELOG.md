@@ -1,109 +1,54 @@
 # 更新记录 / Changelog
 
-## [0.2.1] - 2026-09-12
+## [0.2.2] - 2026-09-12
 
-正式发布版本 0.2.1，构建号 5。
+`0.2.0`、`0.2.1` 与本版本功能范围相同，后续变化仅用于逐步修正发布图标，现统一合并为 `0.2.2`。
 
-Production release 0.2.1, build 5.
-
-### 图标修复 / Icon fix
-
-- 移除正式发布资源中额外烘焙的外圈高光
-- 修复应用图标上边缘偏亮、下边缘偏暗的问题
-- 统一 Debug、WebsiteRelease 与已安装应用的图标位图资源
-- Removed the extra baked outer highlight from the public release resources
-- Fixed the pale top edge and dark lower edge around the application icon
-- Unified the bitmap icon source used by Debug, WebsiteRelease, and the installed app
-
-### 发布状态 / Release status
-
-安装包已完成 Developer ID 签名和 Apple 公证，并通过 Gatekeeper 验证。
-
-The package is signed with Developer ID, notarized by Apple, and accepted by Gatekeeper.
-
-## [0.2.0] - 2026-09-12
-
-正式发布版本 0.2.0，构建号 4。
-
-Production release 0.2.0, build 4.
+Versions `0.2.0` and `0.2.1` had the same functional scope. Subsequent changes only refined the release icon and are consolidated into `0.2.2`.
 
 ### 界面与交互 / Interface and interaction
 
-- 全面调整首页、清洁说明弹窗和清洁过程界面
-- 首页选项与按钮加入统一的悬停反馈
+- 重新设计首页、权限提示、清洁说明和清洁过程页面
+- 为清洁选项和按钮加入统一悬停反馈
 - 清洁过程使用无停顿循环的高光动画
-- 优化说明文案、倒计时提示与重点操作高亮
-- 更新应用图标，并优化 Dock 中的显示效果
-- 窗口固定为 760 × 560，禁用缩放与全屏
-- Redesigned the home screen, cleaning guidance dialogs, and active-cleaning views
-- Added consistent hover feedback to home options and buttons
-- Added continuous highlight motion during cleaning
-- Refined guidance copy, countdown emphasis, and action highlighting
-- Updated the app icon and its Dock presentation
+- 优化说明文案、重点操作高亮和最后一分钟倒计时
+- 窗口固定为 760 × 560，禁用缩放和全屏
+- Redesigned the home screen, permission guidance, cleaning instructions, and active-cleaning views
+- Added consistent hover feedback and continuous cleaning motion
+- Refined guidance, action emphasis, and the final-minute countdown
 - Fixed the window at 760 × 560 with resizing and full screen disabled
 
-### 安全与恢复 / Safety and recovery
+### 输入安全与恢复 / Input safety and recovery
 
 - 输入拦截启动失败时立即回滚已启用的资源
-- 防止延迟启动的旧监听器在会话取消后重新激活
-- 防止旧会话清理过程影响新会话
-- 在手动退出、5 分钟超时、应用退出、睡眠与会话切换时恢复输入
-- Roll back all activated resources immediately when input blocking fails to start
-- Prevent cancelled late listeners from becoming active
+- 防止已取消或超时的旧监听器重新激活
+- 防止旧会话清理影响新的清洁会话
+- 在手动退出、5 分钟超时、应用退出、睡眠和会话切换时恢复输入
+- Roll back activated resources when input interception fails to start
+- Prevent cancelled or timed-out listeners from activating later
 - Prevent cleanup from an earlier session from affecting a newer session
-- Restore input on manual exit, the five-minute timeout, app termination, sleep, and session changes
+- Restore input on manual exit, timeout, app termination, sleep, and session changes
 
-### 发布状态 / Release status
+### 应用图标 / App icon
 
-安装包已完成 Developer ID 签名和 Apple 公证，并通过 Gatekeeper 验证。
-
-The package is signed with Developer ID, notarized by Apple, and accepted by Gatekeeper.
+- 使用原生 Icon Composer `.icon` 资源参与 Xcode 编译，避免系统重复处理预渲染边缘
+- 关闭额外的高光、模糊和阴影效果
+- 在 Finder、Spotlight 和 Dock 中完成可见验收
+- Compile the native Icon Composer `.icon` source directly to avoid double-processing a pre-rendered edge
+- Disable additional specular, blur, and shadow effects
+- Complete visual acceptance in Finder, Spotlight, and the Dock
 
 ## [0.1.0] - 2026-09-05
 
-首个 GitHub 公开测试版。
+首个公开版本。
 
-First public GitHub beta.
+First public release.
 
-### 新增 / Added
-
-- 键盘清洁、触控板清洁和屏幕清洁三种模式。
-- 键盘模式可使用鼠标或触控板点击“结束清洁”安全退出。
-- 触控板模式可通过 ESC 或 Q 安全退出。
-- 屏幕模式只覆盖 MacBook 内置显示屏，可通过点按鼠标或按任意键安全退出。
-- 键盘、触控板和屏幕清洁动画采用统一的横向扫描效果。
-- 每次清洁禁用最长只会维持 5 分钟，以防由于特殊或意外情况导致无法退出禁用。
-- 在退出、超时、睡眠或会话切换时恢复输入。
-- 本机处理输入事件，不记录、不保存、不上传输入内容。
-- Keyboard, trackpad, and screen cleaning modes.
-- Safe exit from keyboard cleaning by clicking “End Cleaning” with the mouse or trackpad.
-- Safe exit from trackpad cleaning with Escape or Q.
-- Screen cleaning covers only the built-in MacBook display and exits safely with a mouse click or any key press.
-- Unified horizontal scan animations for keyboard, trackpad, and screen cleaning.
-- Input blocking lasts no longer than five minutes per cleaning session, preventing an unexpected condition from leaving input disabled indefinitely.
-- Input restoration on exit, timeout, sleep, or session change.
-- Local-only input processing with no recording, storage, or upload of input contents.
-
-### 本次构建更新 / Updated build
-
-- 修复外接显示器上屏幕清洁状态窗口变黑的问题。
-- 屏幕清洁时统一隐藏鼠标指针，并明确键盘和点按退出方式。
-- 清洁过程的最后 60 秒显示逐秒倒计时。
-- 统一键盘、触控板和屏幕清洁动画。
-- 为应用内所有按钮增加统一且更明显的悬停反馈。
-- Fixed the screen-cleaning status window turning black on an external display.
-- The pointer is consistently hidden during screen cleaning, with clear keyboard and click exit guidance.
-- Added a per-second countdown during the final 60 seconds of a cleaning session.
-- Unified keyboard, trackpad, and screen cleaning animations.
-- Added consistent, more visible hover feedback to every in-app button.
-
-### 系统要求 / Requirements
-
-- Apple Silicon Mac
-- macOS 13 或更高版本 / macOS 13 or later
-
-### 发布状态 / Release status
-
-安装包已完成 Developer ID 签名和 Apple 公证，并已通过 GitHub 真实下载验收。
-
-The package is signed with Developer ID, notarized by Apple, and verified through a real GitHub download acceptance test.
+- 键盘、触控板和屏幕三种清洁模式
+- 每次清洁最长 5 分钟
+- 在退出、超时、睡眠或会话切换时恢复输入
+- 本机处理输入事件，不记录、不保存、不上传输入内容
+- Keyboard, trackpad, and screen cleaning modes
+- A five-minute maximum cleaning session
+- Input restoration on exit, timeout, sleep, or session change
+- Local-only input processing with no recording, storage, or upload of input contents
