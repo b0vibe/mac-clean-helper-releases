@@ -1,0 +1,35 @@
+name: Publish v0.2.2
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - ".release-staging/v0.2.2/**"
+      - ".github/workflows/publish-v0.2.2.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Reconstruct and verify notarized package
+        run: |
+          set -euo pipefail
+          cat .release-staging/v0.2.2/chunks/part-* | base64 --decode > /tmp/Mac-Clean-Helper-v0.2.2-macOS-arm64.zip
+          cp .release-staging/v0.2.2/SHA256SUMS.txt /tmp/SHA256SUMS.txt
+          cd /tmp
+          sha256sum -c SHA256SUMS.txt
+      - name: Publish v0.2.2 and remove duplicate releases
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          gh release delete v0.2.2 --repo "$GITHUB_REPOSITORY" --cleanup-tag --yes || true
+          gh release create v0.2.2             /tmp/Mac-Clean-Helper-v0.2.2-macOS-arm64.zip             /tmp/SHA256SUMS.txt             --repo "$GITHUB_REPOSITORY"             --target bedf128b340d741bc7ae8ce078fbe9c4d07a38d3             --title "Mac 清洁助手 v0.2.2 / Mac Clean Helper v0.2.2"             --notes-file .release-staging/v0.2.2/GitHubReleaseNotes.md
+          for tag in v0.2.0 v0.2.1; do
+            gh release delete "$tag" --repo "$GITHUB_REPOSITORY" --cleanup-tag --yes
+          done
