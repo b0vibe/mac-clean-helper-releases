@@ -1,5 +1,26 @@
 # 更新记录 / Changelog
 
+## [0.2.1] - 2026-09-12
+
+正式发布版本 0.2.1，构建号 5。
+
+Production release 0.2.1, build 5.
+
+### 图标修复 / Icon fix
+
+- 移除正式发布资源中额外烘焙的外圈高光
+- 修复应用图标上边缘偏亮、下边缘偏暗的问题
+- 统一 Debug、WebsiteRelease 与已安装应用的图标位图资源
+- Removed the extra baked outer highlight from the public release resources
+- Fixed the pale top edge and dark lower edge around the application icon
+- Unified the bitmap icon source used by Debug, WebsiteRelease, and the installed app
+
+### 发布状态 / Release status
+
+安装包已完成 Developer ID 签名和 Apple 公证，并通过 Gatekeeper 验证。
+
+The package is signed with Developer ID, notarized by Apple, and accepted by Gatekeeper.
+
 ## [0.2.0] - 2026-09-12
 
 正式发布版本 0.2.0，构建号 4。
