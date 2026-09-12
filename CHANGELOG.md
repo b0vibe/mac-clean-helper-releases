@@ -1,5 +1,43 @@
 # 更新记录 / Changelog
 
+## [0.2.0] - 2026-09-12
+
+正式发布版本 0.2.0，构建号 4。
+
+Production release 0.2.0, build 4.
+
+### 界面与交互 / Interface and interaction
+
+- 全面调整首页、清洁说明弹窗和清洁过程界面
+- 首页选项与按钮加入统一的悬停反馈
+- 清洁过程使用无停顿循环的高光动画
+- 优化说明文案、倒计时提示与重点操作高亮
+- 更新应用图标，并优化 Dock 中的显示效果
+- 窗口固定为 760 × 560，禁用缩放与全屏
+- Redesigned the home screen, cleaning guidance dialogs, and active-cleaning views
+- Added consistent hover feedback to home options and buttons
+- Added continuous highlight motion during cleaning
+- Refined guidance copy, countdown emphasis, and action highlighting
+- Updated the app icon and its Dock presentation
+- Fixed the window at 760 × 560 with resizing and full screen disabled
+
+### 安全与恢复 / Safety and recovery
+
+- 输入拦截启动失败时立即回滚已启用的资源
+- 防止延迟启动的旧监听器在会话取消后重新激活
+- 防止旧会话清理过程影响新会话
+- 在手动退出、5 分钟超时、应用退出、睡眠与会话切换时恢复输入
+- Roll back all activated resources immediately when input blocking fails to start
+- Prevent cancelled late listeners from becoming active
+- Prevent cleanup from an earlier session from affecting a newer session
+- Restore input on manual exit, the five-minute timeout, app termination, sleep, and session changes
+
+### 发布状态 / Release status
+
+安装包已完成 Developer ID 签名和 Apple 公证，并通过 Gatekeeper 验证。
+
+The package is signed with Developer ID, notarized by Apple, and accepted by Gatekeeper.
+
 ## [0.1.0] - 2026-09-05
 
 首个 GitHub 公开测试版。
