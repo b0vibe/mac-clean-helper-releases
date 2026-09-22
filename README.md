@@ -6,7 +6,7 @@
 
 Mac Clean Helper temporarily blocks keyboard or pointer input while you clean a MacBook, preventing accidental typing, clicks, drags, and keyboard shortcuts.
 
-> **最新版本 / Latest release：[`v0.2.2`](https://github.com/b0vibe/mac-clean-helper-releases/releases/tag/v0.2.2)**
+> **最新版本 / Latest release：[`v0.2.3`](https://github.com/b0vibe/mac-clean-helper-releases/releases/tag/v0.2.3)**
 
 ## 它能解决什么问题
 
@@ -18,7 +18,7 @@ Mac Clean Helper temporarily blocks keyboard or pointer input while you clean a 
 
 ## 下载与安装
 
-1. 前往 [Releases](https://github.com/b0vibe/mac-clean-helper-releases/releases) 下载 `Mac-Clean-Helper-v0.2.2-macOS-arm64.zip`
+1. 前往 [Releases](https://github.com/b0vibe/mac-clean-helper-releases/releases) 下载 `Mac-Clean-Helper-v0.2.3-macOS-arm64.zip`
 2. 使用同一 Release 中的 `SHA256SUMS.txt` 核对文件
 3. 解压 ZIP，将“Mac 清洁助手”拖入“应用程序”文件夹
 4. 打开应用，并按引导授予 macOS“辅助功能”权限
@@ -60,7 +60,7 @@ Every cleaning session is limited to five minutes. Input is restored on manual e
 
 ### Requirements and installation
 
-Mac Clean Helper requires an Apple Silicon Mac running macOS 13 or later. Download `Mac-Clean-Helper-v0.2.2-macOS-arm64.zip` from [Releases](https://github.com/b0vibe/mac-clean-helper-releases/releases), verify it with `SHA256SUMS.txt`, extract it, and move the app to Applications.
+Mac Clean Helper requires an Apple Silicon Mac running macOS 13 or later. Download `Mac-Clean-Helper-v0.2.3-macOS-arm64.zip` from [Releases](https://github.com/b0vibe/mac-clean-helper-releases/releases), verify it with `SHA256SUMS.txt`, extract it, and move the app to Applications.
 
 Keyboard and trackpad cleaning require macOS Accessibility permission so the app can temporarily intercept input. The app does not record, store, or upload keystrokes or click contents. It makes no network connections and contains no advertising, analytics, or crash-reporting SDKs.
 

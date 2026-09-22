@@ -1,5 +1,11 @@
 # 更新记录 / Changelog
 
+## [0.2.3] - 2026-09-22
+
+修复 macOS 27 上窗口左上角关闭与最小化按钮异常放大的问题。清洁模式和输入恢复逻辑未变。
+
+Fix oversized close and minimize window buttons on macOS 27. Cleaning modes and input-restoration behavior are unchanged.
+
 ## [0.2.2] - 2026-09-12
 
 `0.2.0`、`0.2.1` 与本版本功能范围相同，后续变化仅用于逐步修正发布图标，现统一合并为 `0.2.2`。
